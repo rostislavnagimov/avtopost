@@ -11,7 +11,6 @@ def hello_world():
 @app.route('/post', methods=['POST'])
 def post():
     messages = []
-    messages.append('Got POST!')
     if request.json.get('type'):
         messages.append(request.json['type'])
         if request.json['type'] == 'wall_post_new':
@@ -20,6 +19,9 @@ def post():
                 f"https://api.telegram.org/bot6646276001:AAH4q6HZM2n_-m4mscDBgEuVhIBhYTiMJBw/sendMessage?chat_id=159529075&text={request.json['text']}",
             )
             messages.append(f'Response status: {res.status_code}')
+
+        if request.json['type'] == 'confirmation':
+            return 'f725c307'
     messages.append(json.dumps(request.json))
 
     response = Response('\n'.join(messages))
