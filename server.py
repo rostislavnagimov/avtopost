@@ -21,7 +21,7 @@ def post():
             messages.append(f'Response status: {res.status_code}')
 
         if request.json['type'] == 'confirmation':
-            return 'f725c307'
+            return '92a043a8'
     messages.append(json.dumps(request.json))
 
     response = Response('\n'.join(messages))
