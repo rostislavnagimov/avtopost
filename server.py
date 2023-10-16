@@ -12,7 +12,7 @@ def post():
     if request.json.get('type'):
         if request.json['type'] == 'wall_post_new':
             requests.post(
-                f"https://api.telegram.org/bot6646276001:AAH4q6HZM2n_-m4mscDBgEuVhIBhYTiMJBw/sendMessage?chat_id=159529075&text={request.json['object']['text']}",
+                f"https://api.telegram.org/bot6646276001:AAH4q6HZM2n_-m4mscDBgEuVhIBhYTiMJBw/sendMessage?chat_id=-1001876407715&text={request.json['object']['text']}",
             )
 
             return 'ok', 200
